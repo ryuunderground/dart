@@ -1,8 +1,11 @@
 void main() {
-  dynamic name = "John";
-  if (name is String) {
-    print(name.isEmpty);
+  String? name = "John";
+  name = null;
+  /* if (name != null) {
+    print(name.length);
+    print(name.isNotEmpty);
   } else {
-    print("Name is not a string");
-  }
+    print("Name is null");
+  } */
+  print(name?.isEmpty);
 }
