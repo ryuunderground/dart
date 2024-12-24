@@ -1,5 +1,6 @@
 void main() {
-  final name = "John";
+  late final String name;
+  // do sth, go to api
+  name = "John";
   print(name);
-  print("can not be changed");
 }
