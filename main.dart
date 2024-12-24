@@ -1,6 +1,4 @@
 void main() {
-  late final String name;
-  // do sth, go to api
-  name = "John";
-  print(name);
+  const API_KEY = "1223123";
+  //variable sould be known at compile time
 }
