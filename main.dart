@@ -1,12 +1,11 @@
 class Player {
-  late String name;
-  late int xp;
+  String name;
+  int xp;
   final String team = "Blue";
   bool isActive = false;
 
-  Player(String name, int xp) {
-    this.name = name;
-    this.xp = xp;
+  Player(this.name, this.xp) {
+    print("Player created");
   }
 
   void selfPR() {
