@@ -1,15 +1,24 @@
 class Player {
-  String name = "Prozac";
-  int xp = 1000;
+  late String name;
+  late int xp;
   final String team = "Blue";
-  //final means that the value of the variable cannot be changed
-  //after it is initialized
   bool isActive = false;
+
+  Player(String name, int xp) {
+    this.name = name;
+    this.xp = xp;
+  }
+
+  void selfPR() {
+    var team = "Evil";
+    print(
+        "Hello, I am $name. I'm in the ${this.team} team. I am enemy of $team.");
+  }
 }
 
 void main() {
-  var theOne = Player();
-  print(theOne.name);
-  theOne.name = "TheManWhoLaughs";
-  print(theOne.name);
+  var theOne = Player("Prozac", 1000);
+  theOne.selfPR();
+  var theLast = Player("TheManWhoLaughs", 12400);
+  theLast.selfPR();
 }
