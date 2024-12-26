@@ -1,7 +1,6 @@
 class Player {
-  String name;
+  final String name, team;
   int xp;
-  String team;
   bool isActive;
 
   Player(
@@ -12,6 +11,18 @@ class Player {
     print("Player created");
   }
 
+  Player.createBluePlayer({required String name, required bool isActive})
+      : this.name = name,
+        this.isActive = isActive,
+        team = "Blue",
+        xp = 0;
+
+  Player.createRedPlayer(String name, bool isActive)
+      : this.name = name,
+        this.isActive = isActive,
+        team = "Red",
+        xp = 100;
+
   void selfPR() {
     var team = "Evil";
     print(
@@ -20,18 +31,9 @@ class Player {
 }
 
 void main() {
-  var theOne = Player(
-    name: "Prozac",
-    xp: 1000,
-    team: "Blue",
-    isActive: true,
-  );
-  theOne.selfPR();
-  var theLast = Player(
-    name: "TheManWhoLaughs",
-    xp: 12400,
-    team: "Red",
-    isActive: false,
-  );
-  theLast.selfPR();
+  var theBlue = Player.createBluePlayer(name: "Prozac", isActive: true);
+  var theRed = Player.createRedPlayer("TheManWhoLaughs", false);
+
+  theBlue.selfPR();
+  theRed.selfPR();
 }
