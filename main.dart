@@ -1,10 +1,14 @@
 class Player {
   String name;
   int xp;
-  final String team = "Blue";
-  bool isActive = false;
+  String team;
+  bool isActive;
 
-  Player(this.name, this.xp) {
+  Player(
+      {required this.name,
+      required this.xp,
+      required this.team,
+      required this.isActive}) {
     print("Player created");
   }
 
@@ -16,8 +20,18 @@ class Player {
 }
 
 void main() {
-  var theOne = Player("Prozac", 1000);
+  var theOne = Player(
+    name: "Prozac",
+    xp: 1000,
+    team: "Blue",
+    isActive: true,
+  );
   theOne.selfPR();
-  var theLast = Player("TheManWhoLaughs", 12400);
+  var theLast = Player(
+    name: "TheManWhoLaughs",
+    xp: 12400,
+    team: "Red",
+    isActive: false,
+  );
   theLast.selfPR();
 }
