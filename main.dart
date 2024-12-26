@@ -1,10 +1,15 @@
-typedef ListOfInts = List<int>;
-
-ListOfInts reverseList(ListOfInts list) {
-  var reversedList = list.reversed.toList();
-  return reversedList;
+class Player {
+  String name = "Prozac";
+  int xp = 1000;
+  final String team = "Blue";
+  //final means that the value of the variable cannot be changed
+  //after it is initialized
+  bool isActive = false;
 }
 
 void main() {
-  print(reverseList([1, 2, 3, 4, 5]));
+  var theOne = Player();
+  print(theOne.name);
+  theOne.name = "TheManWhoLaughs";
+  print(theOne.name);
 }
