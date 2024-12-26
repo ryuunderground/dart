@@ -1,8 +1,18 @@
-String hBD(String name, int age, [String? location = 'unknown']) {
-  return ('Happy Birthday, $name! You are $age years old! You live in $location.');
+String capitalize(String? name) => name?.toUpperCase() ?? "UNKNOWN";
+/* 
+String capitalize(String? name) {
+  if (name == null) {
+    return "UNKNOWN";
+  }
+  return name.toUpperCase();
 }
+*/
 
 void main() {
-  print(hBD('John', 20, 'New York'));
-  print(hBD('Amy', 22));
+  print(capitalize('john'));
+  print(capitalize(null));
+  String? location;
+  location ??= 'nowhere';
+  location ??= 'This will not be printed';
+  print(location);
 }
