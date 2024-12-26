@@ -1,18 +1,10 @@
-String capitalize(String? name) => name?.toUpperCase() ?? "UNKNOWN";
-/* 
-String capitalize(String? name) {
-  if (name == null) {
-    return "UNKNOWN";
-  }
-  return name.toUpperCase();
+typedef ListOfInts = List<int>;
+
+ListOfInts reverseList(ListOfInts list) {
+  var reversedList = list.reversed.toList();
+  return reversedList;
 }
-*/
 
 void main() {
-  print(capitalize('john'));
-  print(capitalize(null));
-  String? location;
-  location ??= 'nowhere';
-  location ??= 'This will not be printed';
-  print(location);
+  print(reverseList([1, 2, 3, 4, 5]));
 }
