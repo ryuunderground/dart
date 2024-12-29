@@ -1,3 +1,17 @@
+mixin Strong {
+  final double power = 180.01;
+}
+
+mixin Fast {
+  void runFast() {
+    print("I'm runninnnnnnnnng!!!!!");
+  }
+}
+
+mixin class Smart {
+  final int intelligence = 100;
+}
+
 class Human {
   final String name;
   Human({required this.name});
@@ -9,7 +23,8 @@ class Human {
 
 enum Team { Good, Evil, Wicked, Chaos }
 
-class Player extends Human {
+//This will print override the selfIntroduction method in the Human class
+class Player extends Human with Smart, Strong {
   final Team team;
   Player({required super.name, required this.team});
 
@@ -20,14 +35,13 @@ class Player extends Human {
   }
 }
 
-class Joney extends Human {
-  Joney({required super.name});
-}
+class Joney with Strong, Fast {}
 
 void main() {
   var Ryu = Player(name: "Ryu", team: Team.Evil);
   Ryu.selfIntroduction();
   print(Ryu.team);
-  var Black = Joney(name: "Black");
-  Black.selfIntroduction();
+  var Black = Joney();
+  Black.runFast();
+  print(Black.power);
 }
