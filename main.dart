@@ -1,39 +1,22 @@
-class Player {
-  final String name, team;
-  int xp;
-  bool isActive;
+enum Team { Good, Evil, Wicked, Chaos }
 
-  Player(
-      {required this.name,
-      required this.xp,
-      required this.team,
-      required this.isActive}) {
-    print("Player created");
-  }
+class Players {
+  String name;
+  int level;
+  Team team;
 
-  Player.createBluePlayer({required String name, required bool isActive})
-      : this.name = name,
-        this.isActive = isActive,
-        team = "Blue",
-        xp = 0;
+  Players({required this.name, required this.level, required this.team});
 
-  Player.createRedPlayer(String name, bool isActive)
-      : this.name = name,
-        this.isActive = isActive,
-        team = "Red",
-        xp = 100;
-
-  void selfPR() {
-    var team = "Evil";
-    print(
-        "Hello, I am $name. I'm in the ${this.team} team. I am enemy of $team.");
+  void selfIntroduction() {
+    print("Hello, I'm $name. I'm a $level level player in $team.");
   }
 }
 
 void main() {
-  var theBlue = Player.createBluePlayer(name: "Prozac", isActive: true);
-  var theRed = Player.createRedPlayer("TheManWhoLaughs", false);
-
-  theBlue.selfPR();
-  theRed.selfPR();
+  var Ryu = Players(name: "Ryu", level: 25, team: Team.Evil)
+    ..name = "Underground"
+    ..level = 28
+    ..team = Team.Chaos
+    ..selfIntroduction();
+  print(Ryu);
 }
