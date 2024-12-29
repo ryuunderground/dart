@@ -1,37 +1,33 @@
-abstract class Human {
-  void walk();
+class Human {
+  final String name;
+  Human({required this.name});
+
+  void selfIntroduction() {
+    print("Hello, I'm $name");
+  }
 }
 
 enum Team { Good, Evil, Wicked, Chaos }
 
-class Players extends Human {
-  String name;
-  int level;
-  Team team;
+class Player extends Human {
+  final Team team;
+  Player({required super.name, required this.team});
 
-  Players({required this.name, required this.level, required this.team});
-
-  void walk() {
-    print("I'm walking");
-  }
-
+  @override
   void selfIntroduction() {
-    print("Hello, I'm $name. I'm a $level level player in $team.");
+    super.selfIntroduction();
+    print("AND I'm a $team player");
   }
 }
 
 class Joney extends Human {
-  void walk() {
-    print("I'm Joney walker");
-  }
+  Joney({required super.name});
 }
 
 void main() {
-  var Ryu = Players(name: "Ryu", level: 25, team: Team.Evil)
-    ..name = "Underground"
-    ..level = 28
-    ..team = Team.Chaos
-    ..selfIntroduction();
-  var Black = Joney();
-  Black.walk();
+  var Ryu = Player(name: "Ryu", team: Team.Evil);
+  Ryu.selfIntroduction();
+  print(Ryu.team);
+  var Black = Joney(name: "Black");
+  Black.selfIntroduction();
 }
